@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: user
+logging:
+  level:
+    root: INFO
