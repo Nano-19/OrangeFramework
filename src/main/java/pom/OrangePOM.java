@@ -38,6 +38,9 @@ public class OrangePOM extends SeleniumHub {
     @FindBy(id = "authBoxLogin_btn_Cliente_Entrar_8" )
     private WebElement enterBtn;
 
+    @FindBy(xpath = "//a[@title='Orange España']" )
+    private WebElement orangeTitle;
+
     @FindBy(xpath = "//span[@class='panel-image ng-binding']" )
     private WebElement incorrectLoginMessage;
 
@@ -63,6 +66,10 @@ public class OrangePOM extends SeleniumHub {
 
     public void clickEnterButton() {
         enterBtn.click();
+    }
+
+    public String getOrangeTitle(){
+        return wait.until(ExpectedConditions.visibilityOf(orangeTitle)).getText();
     }
 
     public String checkIncorrectLoginMessage() {

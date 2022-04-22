@@ -21,6 +21,12 @@ public class OrangeSteps  {
         orangePOM.clientAreaClick();
     }
 
+    @Then("I check if I am in the principal page and the {string} text appears")
+    public void checkIfLogoAppears(String orangeTitle) {
+        Assert.assertEquals(orangeTitle, orangePOM.getOrangeTitle());
+    }
+
+
     @And("Try Login with a no register user {string} {string}")
     public void tryLogin(String user, String pass){
         orangePOM.enterUserAndPassword(user,pass);

@@ -1,11 +1,11 @@
-#Feature: Orange Search
-#  Scenario: Search Orange Web page in Google
-#    Given I am in the "GooGleWebPage"
-#    When I search "Orange" Web page
-#    And Enter in the Orange Url
-#    Then I check if Orange logo appears
+Feature: Orange Search
+  Scenario: Search Orange Web page in Google
+    Given I am in the "GooGleWebPage"
+    When I search "Orange" Web page
+    And Enter in the Orange Url
+    Then I check if I am in the principal page and the "Orange España" text appears
 
-Feature: Orange incorrect login
+#Feature: Orange incorrect login
   Scenario: Try Orange Incorrect login
     Given I am in the "OrangeWebPage"
     When I click in "Particulares" Dropdown
