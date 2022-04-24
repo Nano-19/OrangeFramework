@@ -7,12 +7,20 @@ import java.net.MalformedURLException;
 
 public class Hooks {
 
+//    Uncomment this for use driver local
+
 //    BaseDriver base = new BaseDriver();
-      SeleniumHub seleniumHub = new SeleniumHub();
-    //    @Before
-//    public void appInstallAndLoad() {
+//    @Before
+//    public void configureDriver() {
 //        base.DriverConfiguration();
 //    }
+//    @After
+//    public void removeDriver() throws MalformedURLException {
+//        base.TearDown();
+//    }
+//
+
+    SeleniumHub seleniumHub = new SeleniumHub();
     @Before
     public void configureDriver() throws MalformedURLException {
         seleniumHub.DriverConfiguration();

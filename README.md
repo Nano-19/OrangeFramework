@@ -44,6 +44,11 @@ The programing and documentation must be in English.
 
 ---
 
+### More info
+
+Inside this project in you can found a "Plan de pruebas Orange.doc" with a little test plan.
+JenkinsFile inside this project.
+
 ### Authors
 
 Fernando Orea.
