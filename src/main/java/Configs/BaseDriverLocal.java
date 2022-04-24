@@ -1,4 +1,4 @@
-package Configs;
+package configs;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,6 +26,12 @@ public class BaseDriverLocal {
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+    }
+
+    public void TearDown() {
+        if(driver != null) {
+            driver.close();
+        }
     }
 }
 

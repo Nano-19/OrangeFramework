@@ -1,5 +1,6 @@
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import Configs.SeleniumHub;
+import configs.SeleniumHub;
 
 import java.net.MalformedURLException;
 
@@ -13,7 +14,12 @@ public class Hooks {
 //        base.DriverConfiguration();
 //    }
     @Before
-    public void mailTest() throws MalformedURLException {
+    public void configureDriver() throws MalformedURLException {
         seleniumHub.DriverConfiguration();
+    }
+
+    @After
+    public void removeDriver() throws MalformedURLException {
+        seleniumHub.TearDown();
     }
 }

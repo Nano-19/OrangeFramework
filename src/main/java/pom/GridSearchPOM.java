@@ -1,6 +1,6 @@
 package pom;
 
-import Configs.SeleniumHub;
+import configs.SeleniumHub;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,13 +34,11 @@ public class GridSearchPOM extends SeleniumHub {
     public WebElement inputBox;
 
 
-
-
     public void searchWebPage(String webUrl) {
-        if (webUrl.contains("GooGleWebPage")) {
-            driver.get("https://www.google.com");
-        } else if (webUrl.contains("OrangeWebPage")) {
-            driver.get("https://www.orange.es/");
+        if (webUrl.contains("google")) {
+            driver.get(webUrl);
+        } else if (webUrl.contains("orange")) {
+            driver.get(webUrl);
             orangeCookies.click();
         }
     }

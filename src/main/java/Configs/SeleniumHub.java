@@ -1,4 +1,4 @@
-package Configs;
+package configs;
 
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -24,5 +24,11 @@ public class SeleniumHub {
         options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
         driver.manage().window().maximize();
+    }
+
+    public void TearDown() {
+        if(driver != null) {
+            driver.close();
+        }
     }
 }
