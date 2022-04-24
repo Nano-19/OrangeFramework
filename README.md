@@ -28,7 +28,7 @@ The programing and documentation must be in English.
 ### How to launch
 
    1. If you're going to be launch the test cases with "BaseDriverLocalClass" must download and configure the driver like this "C:\Selenium\drivers\chromedriver.exe".
-   2. If you're going to be launch the test cases with "SeleniumHub" must or launch hub in docker or hub the hub and the configurations like this commands for launch the hub in local.
+   2. If you're going to be launch the test cases with "SeleniumHub" you must use the grid and the nodeconfig.Json inside this project (src/test/resources/seleniumGrid) with this commands and change the paths if would be necessary.
       1. java -jar selenium-server-standalone-3.141.59.jar -role hub
       2. java -Dwebdriver.chrome.driver=C:/Selenium/drivers/chromedriver.exe -jar selenium-server-standalone-3.141.59.jar -role node -nodeConfig nodeConfig.json --debug
 
