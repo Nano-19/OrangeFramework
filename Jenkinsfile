@@ -56,7 +56,7 @@ pipeline {
             steps{
                 container('maven'){
                     dir('Tests')
-                        sh 'mvn -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true -s  .m2/settings.xml test'
+                        sh 'mvn test'
                 }
             }
     }
