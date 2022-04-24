@@ -1,7 +1,8 @@
 
 # Orange Framework Selenium
 
-This framework it's created for automated cases for Orange company it's based in Java.
+This framework it's created for automated test cases for Orange company.
+It's based in Java and using the BDD (Behavior Driven Development) as a development process.
 
 ### Technologies and dependencies used
 
@@ -12,7 +13,8 @@ This framework it's created for automated cases for Orange company it's based in
     3. Cucumber for java
     4. Cucumber for Junit
 
-2. Now you can use this framework in local with (BaseDriverLocal class) or you can use with selenium hub with SeleniumHub class.
+2. You can use this framework in local with (BaseDriverLocal class) or. 
+3. You can use with selenium hub with SeleniumHub class.
 
 ---
 
@@ -25,15 +27,20 @@ The programing and documentation must be in English.
 
 ### How to launch
 
-   1. mvn test (execute all features)
-   2. From runner
-   3. You can use tag in specific scenarios like @WIP and execute specific scenario with  mvn test -Dcucumber.options="--tags @tagname" 
+   1. If you're going to be launch the test cases with "BaseDriverLocalClass" must download and configure the driver like this "C:\Selenium\drivers\chromedriver.exe".
+   2. If you're going to be launch the test cases with "SeleniumHub" must or launch hub in docker or hub the hub and the configurations like this commands for launch the hub in local.
+      1. java -jar selenium-server-standalone-3.141.59.jar -role hub
+      2. java -Dwebdriver.chrome.driver=C:/Selenium/drivers/chromedriver.exe -jar selenium-server-standalone-3.141.59.jar -role node -nodeConfig nodeConfig.json --debug
+
+   3. mvn test (execute all features)
+   4. From runner class "RunCucumberTest" click in trigger.
+   5. You can use tag in specific scenarios like @WIP and execute specific scenario with  mvn test -Dcucumber.options="--tags @tagname" 
 
 ### To do in a future / Ideas
 
-* Use Wiremock, always is much better aim to a unit test isolating front end test and back end test.
-* Connect with devices farm like a BitBar
-* Migrate to Spring Boot
+* Use Wiremock, always is much better aim to a unit test, isolating front end test, and back end test.
+* Connect with another web pages like Opera, Firefox etc... with kubernetes and Jenkinsfile.
+* Migrate to Spring Boot.
 
 ---
 

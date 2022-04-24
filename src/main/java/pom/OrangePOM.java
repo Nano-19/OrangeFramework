@@ -44,6 +44,15 @@ public class OrangePOM extends SeleniumHub {
     @FindBy(xpath = "//span[@class='panel-image ng-binding']" )
     private WebElement incorrectLoginMessage;
 
+    @FindBy(xpath = "*//a[@title='Tarifas']" )
+    private WebElement faresButton;
+
+    @FindBy(xpath = "*//a[@title='Encuentra tu tarifa Solo Móvil']")
+    private WebElement mobileButton;
+
+    @FindBy(id = "precioTarifa")
+    private WebElement farePrice;
+
 
     public void openDropDown(){
         dropDownBtn.click();
@@ -74,5 +83,17 @@ public class OrangePOM extends SeleniumHub {
 
     public String checkIncorrectLoginMessage() {
         return wait.until(ExpectedConditions.visibilityOf(incorrectLoginMessage)).getText();
+    }
+
+    public void clickFareBtn(){
+        wait.until(ExpectedConditions.visibilityOf(faresButton)).click();
+    }
+
+    public void clickInMobileBtn(){
+        wait.until(ExpectedConditions.visibilityOf(mobileButton)).click();
+    }
+
+    public int getTotalPrice(){
+        return Integer.parseInt(wait.until(ExpectedConditions.visibilityOf(farePrice)).getText());
     }
 }

@@ -37,4 +37,18 @@ public class OrangeSteps  {
         Assert.assertEquals(webUrl, orangePOM.checkIncorrectLoginMessage());
     }
 
+    @When("I click in fares Button")
+    public void iClickInButton() {
+        orangePOM.clickFareBtn();
+    }
+
+    @Then("I select mobile fare")
+    public void iSelectMobileFare() {
+        orangePOM.clickInMobileBtn();
+    }
+
+    @And("The first fare has a {int} € price")
+    public void theFirstFareHasAPrice(int price) {
+        Assert.assertEquals(price, orangePOM.getTotalPrice());
+    }
 }
