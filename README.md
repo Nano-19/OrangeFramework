@@ -44,10 +44,46 @@ The programing and documentation must be in English.
 
 ---
 
+### Deliverables in this project:
+
+1. The front end framework (Selenium + Java +Junit + Cucumber) fully functional and with 3 test cases. 
+2. Word document testplan. 
+3. JenkinsFile. 
+4. Docker File:
+
+I have tried to make the DockerFile as requested by the test, but (in my opinion) technically the optimal way to solve it would be with the jenkinsfile (since it uses Kubernetes as container orchestrator) that is done above, in order to make a dockerfile with the complexity of dependencies (Grid and Selenium Nodes mainly), I have not had enough time to develop it and perform trial and error.
+
+But the ways I can think of to develop dockerfile would be two...
+
+1. Start from an ubuntu image and prepare all the dependencies (maven, the grid and chrome node...) based on that build the image and push it to docker hub. with that image with all the dependencies I could create a dockerfile in this way to add the git repository and launch the tests.
+
+DockerFile:
+
+    FROM imageTestOrange:latest
+    MAINTAINER fernando orea
+    
+    RUN apt-get update -y && apt-get upgrade -y &&&&
+    apt install git -y
+    
+    RUN git clone https://github.com/Nano-19/OrangeFramework.git
+    WORKDIR /OrangeFramework
+    RUN cd /OrangeFramework
+    RUN mvn test
+    
+    ENTRYPOINT ["/bin/sh"] 
+
+
+2. (I do not know if it is possible since I have never done it) But it seems that I could make a DockerFile with several FROM $Image and from there create the custom image directly putting the Framework.
+
+---
+
 ### More info
 
 Inside this project you can found a "Plan de pruebas Orange.doc" with a little test plan.
 JenkinsFile inside this project.
+Selenium grid and drivers
+
+---
 
 ### Authors
 
