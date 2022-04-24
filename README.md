@@ -72,8 +72,8 @@ DockerFile:
     
     ENTRYPOINT ["/bin/sh"] 
 
-
-2. (I do not know if it is possible since I have never done it) But it seems that I could make a DockerFile with several FROM $Image and from there create the custom image directly putting the Framework.
+2. With a docker-compose.yml you could have the selenium grid with the respective nodes to launch the testcases, but you would have to cover the maven dependency and add the framework to get the full abstraction.
+3. (I do not know if it is possible since I have never done it) But it seems that I could make a DockerFile with several FROM $Image and from there create the custom image directly putting the Framework.
 
 ---
 
